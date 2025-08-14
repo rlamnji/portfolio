@@ -3,7 +3,7 @@ import testImg from "../../../assets/notion.svg";
 import testLogo from "../../../assets/react.svg";
 import type { ProjectData } from "../../../data/projectData";
 
-import { motion } from "motion/react"
+import { motion } from "motion/react";
 
 export default function ProjectCard({
     data,
