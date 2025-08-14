@@ -17,14 +17,13 @@ export default function GridModal({
     return (
         <div className="w-180 h-200 border border-gray-200 bg-white p-6 rounded-xl shadow-xl shadow-[#B4A9A9]">
             <div className="w-10 ml-160">
-            <button
-                className="cursor-pointer bg-primary rounded-full w-6 h-6 text-white"
-                onClick={() => setModal(false)}
-            >
-                X
-            </button>
+                <button
+                    className="cursor-pointer bg-primary rounded-full w-6 h-6 text-white"
+                    onClick={() => setModal(false)}
+                >
+                    X
+                </button>
             </div>
-
 
             <div className="flex flex-row justify-between pl-5 pr-5 pt-3 items-center">
                 <div className="flex flex-col ">
@@ -69,7 +68,9 @@ export default function GridModal({
             </div>
 
             {/* 여기에 프로젝트 상세 내용 추가 */}
-            <div className="w-full h-115 border border-gray-200 rounded-xl overflow-auto mt-3 p-4">{contents}</div>
+            <div className="w-full h-115 border border-gray-200 rounded-xl overflow-auto mt-3 p-4">
+                {contents}
+            </div>
         </div>
     );
 }

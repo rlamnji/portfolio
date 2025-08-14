@@ -54,7 +54,9 @@ export default function ProjectCard({
                             alt="Skill Logo"
                             className="w-4 h-4 mr-1"
                         />
-                        <span className="text-white text-[14px] font-light">{skill}</span>
+                        <span className="text-white text-[14px] font-light">
+                            {skill}
+                        </span>
                     </div>
                 ))}
 
