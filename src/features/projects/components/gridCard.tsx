@@ -3,6 +3,8 @@ import testImg from "../../../assets/notion.svg";
 import testLogo from "../../../assets/react.svg";
 import type { ProjectData } from "../../../data/projectData";
 
+import { motion } from "motion/react"
+
 export default function ProjectCard({
     data,
     setModal,
@@ -22,7 +24,9 @@ export default function ProjectCard({
     };
 
     return (
-        <div
+        <motion.div
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
             className="flex flex-col w-80 h-100 max-md:w-60 max-md:h-80 border border-[#dddddd7e] p-4 rounded-[20px] shadow-xl cursor-pointer"
             onClick={() => onClick(true)}
         >
@@ -66,6 +70,6 @@ export default function ProjectCard({
                     </div>
                 )}
             </div>
-        </div>
+        </motion.div>
     );
 }
