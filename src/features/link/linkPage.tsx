@@ -33,7 +33,6 @@ function LinkPage() {
                     className="w-full h-full object-cover"
                 />
             </div>
-            
         </>
     );
 }
