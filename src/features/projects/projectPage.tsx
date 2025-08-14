@@ -41,29 +41,29 @@ function ProjectPage() {
                     initialOpacity={0}
                 >*}
                     {/* 프로젝트 카드 */}
-                    <div className="justify-center items-center flex flex-col">
-                        {viewType === "grid" && (
-                            <div className="grid grid-cols-3 max-md:grid-cols-1 gap-x-30 gap-y-10">
-                                {data.map((data) => (
-                                    <GridCard
-                                        key={data.id}
-                                        setID={setID}
-                                        data={data}
-                                        setModal={setModal}
-                                    />
-                                ))}
-                            </div>
-                        )}
+                <div className="justify-center items-center flex flex-col">
+                    {viewType === "grid" && (
+                        <div className="grid grid-cols-3 max-md:grid-cols-1 gap-x-30 gap-y-10">
+                            {data.map((data) => (
+                                <GridCard
+                                    key={data.id}
+                                    setID={setID}
+                                    data={data}
+                                    setModal={setModal}
+                                />
+                            ))}
+                        </div>
+                    )}
 
-                        {viewType === "carousel" && (
-                            <div className="flex flex-cols-3 gap-x-30 gap-y-10">
-                                {/*  {data.map((data) => (
+                    {viewType === "carousel" && (
+                        <div className="flex flex-cols-3 gap-x-30 gap-y-10">
+                            {/*  {data.map((data) => (
                             <ProjectCard key={data.id} data={data} />
                         ))}*/}
-                                carousel
-                            </div>
-                        )}
-                    </div>
+                            carousel
+                        </div>
+                    )}
+                </div>
                 {/*</FadeContent>*/}
             </div>
 
