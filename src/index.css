@@ -1,24 +1,24 @@
 @import "tailwindcss";
 
 @theme {
-  /* 카테고리 제목 및 배경라인 */
-  --color-primary: #A18081;
-  --color-primary-line: #C7B6B7;
-  
-  /* 드롭박스 */
-  --color-dropdown-text: #A69494;
-  
-  /* 기본 글자(skills) */
-  --color-skills: #786B6B;
+    /* 카테고리 제목 및 배경라인 */
+    --color-primary: #a18081;
+    --color-primary-line: #c7b6b7;
 
-  /* 기본 글자(project)*/
-  --color-project-title:#8A6E6F;
-  --color-project-content:#8C8C8C;
+    /* 드롭박스 */
+    --color-dropdown-text: #a69494;
+
+    /* 기본 글자(skills) */
+    --color-skills: #786b6b;
+
+    /* 기본 글자(project)*/
+    --color-project-title: #8a6e6f;
+    --color-project-content: #8c8c8c;
 }
 
 .category-title {
-  color: var(--color-primary);
-  font-weight: bold;
-  font-size: 40px;
-  letter-spacing: 0.15em;
+    color: var(--color-primary);
+    font-weight: bold;
+    font-size: 40px;
+    letter-spacing: 0.15em;
 }

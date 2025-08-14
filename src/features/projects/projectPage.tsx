@@ -1,24 +1,73 @@
-import ProjectCard from "./components/projectCard";
+import GridCard from "./components/gridCard";
 import ViewType from "./components/viewType";
 
-function ProjectPage() {
-    return (
-        <div className="p-20">
-            {/* 제목 (공통 스타일) */}
-            <div className="flex flex-row justify-between items-center">
-                <p className="category-title">
-                    <span className="text-[64px]">P</span>roject
-                </p>
+import { useState } from "react";
+import { projectData } from "../../data/projectData";
+import GridModal from "./components/gridModal";
 
-                <div className="flex flex-row">
-                    <div className="text-primary">* What Im Skilled In</div>
+function ProjectPage() {
+    const [data] = useState(projectData);
+    const [viewType, setViewType] = useState("grid");
+    const [id, setID] = useState<number | null>(null);
+    const [modal, setModal] = useState(false);
+
+    return (
+        <>
+            <div className={`${modal === true ? "blur-sm" : ""}`}>
+                <div className="p-20 ">
+                    {/* 제목 (공통 스타일) */}
+                    <div className="flex flex-row justify-between items-center">
+                        <p className="category-title">
+                            <span className="text-[64px]">P</span>roject
+                        </p>
+
+                        <div className="flex flex-row">
+                            <div className="text-primary">
+                                * What Im Skilled In
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* 프로젝트 보기형식 */}
+                    <ViewType setViewType={setViewType} viewType={viewType} />
+                </div>
+
+                {/* 프로젝트 카드 */}
+                <div className="justify-center items-center flex flex-col">
+                    {viewType === "grid" && (
+                        <div className="grid grid-cols-3 max-md:grid-cols-1 gap-x-30 gap-y-10">
+                            {data.map((data) => (
+                                <GridCard
+                                    key={data.id}
+                                    setID={setID}
+                                    data={data}
+                                    setModal={setModal}
+                                />
+                            ))}
+                        </div>
+                    )}
+
+                    {viewType === "carousel" && (
+                        <div className="flex flex-cols-3 gap-x-30 gap-y-10">
+                            {/*  {data.map((data) => (
+                            <ProjectCard key={data.id} data={data} />
+                        ))}*/}
+                            carousel
+                        </div>
+                    )}
                 </div>
             </div>
 
-            <ViewType/>
-
-            <ProjectCard/>
-        </div>
+            {/* 모달창 */}
+            {modal && (
+                <div className="fixed inset-0 shadow-xl flex justify-center items-center">
+                    <GridModal
+                        data={data.find((item) => item.id === id)!}
+                        setModal={setModal}
+                    />
+                </div>
+            )}
+        </>
     );
 }
 
