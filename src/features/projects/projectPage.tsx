@@ -1,10 +1,11 @@
 import GridCard from "./components/gridCard";
 import ViewType from "./components/viewType";
 
-import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState} from "react";
+//import { useNavigate } from "react-router-dom";
 import { projectData } from "../../data/projectData";
 import GridModal from "./components/gridModal";
+//import { useContainerScrollNavigateBi } from "../../common/hook/useScrollNavigate";
 
 function ProjectPage() {
     const [data] = useState(projectData);
@@ -12,37 +13,11 @@ function ProjectPage() {
     const [id, setID] = useState<number | null>(null);
     const [modal, setModal] = useState(false);
 
-    const navigate = useNavigate();
-
-    useEffect(() => {
-        if (modal) return; // 모달 시 비활성
-        let fired = false;
-
-        const onWinScroll = () => {
-            if (fired) return;
-            const scrollTop = window.scrollY;
-            const docH = document.documentElement.scrollHeight;
-            const winH = window.innerHeight;
-
-            // 하단 85% 도달 시
-            if ((scrollTop + winH) / docH >= 0.85) {
-                fired = true;
-                navigate("/link");
-            }
-        };
-
-        window.addEventListener("scroll", onWinScroll, { passive: true });
-        return () => window.removeEventListener("scroll", onWinScroll);
-    }, [modal, navigate]);
-
     return (
         <>
-            <div
-                className={`${modal === true ? "blur-sm" : ""}`}
-                onScroll={() => {
-                    navigate("/link");
-                }}
-            >
+      <div
+        className={`${modal ? "blur-sm" : ""} h-100vh overflow-y-auto`}
+      >
                 <div className="p-20 ">
                     {/* 제목 (공통 스타일) */}
                     <div className="flex flex-row justify-between items-center">
@@ -54,6 +29,7 @@ function ProjectPage() {
                             <div className="text-primary">
                                 * What Im Skilled In
                             </div>
+
                         </div>
                     </div>
 
