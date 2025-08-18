@@ -1,5 +1,4 @@
 // 단일 프로젝트 카드 컴포넌트
-import testImg from "../../../assets/notion.svg";
 import type { ProjectData } from "../../../data/projectData";
 import { TechLogos } from "../../../data/techLogos";
 
@@ -16,7 +15,7 @@ export default function ProjectCard({
     setModal: (value: boolean) => void;
     setID: (id: number) => void;
 }) {
-    const { title, description, skills } = data;
+    const { title, description, mainImg, skills } = data;
 
     const onClick = (type: boolean) => {
         setModal(type);
@@ -33,7 +32,7 @@ export default function ProjectCard({
             onClick={() => onClick(true)}
         >
             <img
-                src={testImg}
+                src={mainImg}
                 alt="Project Thumbnail"
                 className="w-80 h-50 max-md:h-40 border border-[#dddddd7e] rounded-xl mb-2"
             />

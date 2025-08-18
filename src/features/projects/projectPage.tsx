@@ -21,7 +21,7 @@ function ProjectPage() {
             <div
                 className={`${modal ? "blur-sm" : ""} h-screen overflow-y-auto`}
             >
-                <div className="pl-20 pr-20 pt-15 pb-10">
+                <div className="pl-20 pr-20 pt-15">
                     {/* 제목 (공통 스타일) */}
                     <div className="flex flex-row justify-between items-center">
                         <p className="category-title">

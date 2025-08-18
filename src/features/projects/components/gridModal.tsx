@@ -12,7 +12,7 @@ export default function GridModal({
     data: ProjectData;
     setModal: (value: boolean) => void;
 }) {
-    const { title, description, skills, contents } = data;
+    const { title, description, skills, mainImg, contents } = data;
 
     return (
         <div className="w-180 h-200 border border-gray-200 bg-white p-6 rounded-xl shadow-xl shadow-[#B4A9A9]">
@@ -76,11 +76,11 @@ export default function GridModal({
                     </div>
                 </div>
 
-                <div className="w-60 h-60 bg-gray-200">test imgg</div>
+                <div><img className="w-60 h-50 rounded-xl" src={mainImg}/></div>
             </div>
 
             {/* 여기에 프로젝트 상세 내용 추가 */}
-            <div className="w-full h-115 border border-gray-200 rounded-xl overflow-auto mt-3 p-4">
+            <div className="w-full h-115 border border-gray-200 rounded-xl overflow-auto mt-3 p-6 text-[14px] text-[#8C8C8C]">
                 {contents}
             </div>
         </div>
