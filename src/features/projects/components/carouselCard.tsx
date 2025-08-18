@@ -63,7 +63,6 @@ export default function CarouselCard() {
     return (
         <>
             <div className="slider-container ">
-                
                 {/* 현재 i값 카드와 나머지 카드의 스타일을 다르게 한다. */}
                 <Slider
                     {...settings}
@@ -72,59 +71,54 @@ export default function CarouselCard() {
                     {data.map((item, i) => (
                         <div>
                             <div className="flex flex-row justify-center items-center mt-10">
-                            <div
-                                key={i}
-                                className={`flex items-center h-[700px] p-10 ${i === currentSlideIndex ? "z-10 cursor-pointer" : "opacity-40"}`} // 현재 카드에만 z-index와 투명도 적용
-
-                            >
                                 <div
-                                    className={`border border-gray-200 bg-white shadow-xl rounded-2xl flex flex-col p-6 ${i === currentSlideIndex ? "scale-120 w-[430px] h-[500px]" : ""}`}
+                                    key={i}
+                                    className={`flex items-center h-[700px] p-10 ${i === currentSlideIndex ? "z-10 cursor-pointer" : "opacity-40"}`} // 현재 카드에만 z-index와 투명도 적용
                                 >
-                                    <div className="flex justify-center">
-                                        {i === currentSlideIndex ? (
-                                            <img
-                                                src={testImg}
-                                                className="border w-60 rounded-xl border-gray-200 mb-5"
-                                                alt="test"
-                                            />
-                                        ) : (
-                                            <div className="w-60 h-60 border border-white rounded-xl mb-5"></div>
-                                        )}
-                                    </div>
-                                    <h2 className="text-[24px] text-[#8A6E6F] font-bold mb-3">
-                                        {item.title}
-                                    </h2>
-                                    <span className="h-30 overflow-auto text-[18px] text-[#8C8C8C]">
-                                        {item.description}
-                                    </span>
-
-                                    <div className="flex flex-row items-center mt-3">
-                                        {item.skills.map((skill, index) => (
-                                            <div
-                                                key={index}
-                                                className="flex flex-row w-10 h-10 items-center justify-center"
-                                            >
+                                    <div
+                                        className={`border border-gray-200 bg-white shadow-xl rounded-2xl flex flex-col p-6 ${i === currentSlideIndex ? "scale-120 w-[430px] h-[500px]" : ""}`}
+                                    >
+                                        <div className="flex justify-center">
+                                            {i === currentSlideIndex ? (
                                                 <img
-                                                    src={TechLogos[skill]}
-                                                    alt="Skill Logo"
-                                                    className="w-7 h-7 pointer-cursor hover:scale-120 transition-transform duration-200"
+                                                    src={testImg}
+                                                    className="border w-60 rounded-xl border-gray-200 mb-5"
+                                                    alt="test"
                                                 />
-                                            </div>
-                                        ))}
+                                            ) : (
+                                                <div className="w-60 h-60 border border-white rounded-xl mb-5"></div>
+                                            )}
+                                        </div>
+                                        <h2 className="text-[24px] text-[#8A6E6F] font-bold mb-3">
+                                            {item.title}
+                                        </h2>
+                                        <span className="h-30 overflow-auto text-[18px] text-[#8C8C8C]">
+                                            {item.description}
+                                        </span>
+
+                                        <div className="flex flex-row items-center mt-3">
+                                            {item.skills.map((skill, index) => (
+                                                <div
+                                                    key={index}
+                                                    className="flex flex-row w-10 h-10 items-center justify-center"
+                                                >
+                                                    <img
+                                                        src={TechLogos[skill]}
+                                                        alt="Skill Logo"
+                                                        className="w-7 h-7 pointer-cursor hover:scale-120 transition-transform duration-200"
+                                                    />
+                                                </div>
+                                            ))}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            </div>
-
                         </div>
                     ))}
                 </Slider>
             </div>
 
-            <div
-                
-                className="flex justify-center items-center mt-30"
-            >
+            <div className="flex justify-center items-center mt-30">
                 {<CarouselContent data={data[currentSlideIndex]} />}
             </div>
         </>

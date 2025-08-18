@@ -14,13 +14,25 @@ export default function LinkCard() {
                 </span>
             </div>
             <div className="flex flex-row items-center gap-7">
-                <a href="https://github.com/rlamnji" target="_blank" rel="noopener noreferrer">
+                <a
+                    href="https://github.com/rlamnji"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
                     <img src={github} className="w-10" alt="GitHub" />
                 </a>
-                <a href="https://github.com/rlamnji" target="_blank" rel="noopener noreferrer">
+                <a
+                    href="https://github.com/rlamnji"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
                     <img src={notion} className="w-10" alt="Notion" />
                 </a>
-                <a href="https://velog.io/@rlamnji/posts" target="_blank" rel="noopener noreferrer">
+                <a
+                    href="https://velog.io/@rlamnji/posts"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
                     <img src={velog} className="w-10" alt="Velog" />
                 </a>
             </div>

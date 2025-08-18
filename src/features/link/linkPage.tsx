@@ -6,7 +6,6 @@ import LineBar from "../../common/components/lineBar";
 //import { useRef } from "react";
 
 function LinkPage() {
-
     return (
         <div className="h-screen">
             <div className="pl-20 pr-20 pt-15 pb-10">

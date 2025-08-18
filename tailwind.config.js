@@ -1,4 +1,4 @@
-import { keyframes } from 'motion';
+import { keyframes } from "motion";
 
 /** @type {import('tailwindcss').Config} */
 export default {

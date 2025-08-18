@@ -15,7 +15,8 @@ export const projectData: ProjectData[] = [
     {
         id: 1,
         title: "rlamnji portfolio",
-        description: "React + TypeScript + tailwindcss를 사용한 나의 포트폴리오 사이트 제작",
+        description:
+            "React + TypeScript + tailwindcss를 사용한 나의 포트폴리오 사이트 제작",
         mainImg: "",
         skills: ["React", "TypeScript", "tailwindcss", "figma"],
         link: [

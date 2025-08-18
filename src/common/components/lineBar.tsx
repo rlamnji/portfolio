@@ -1,4 +1,4 @@
-export default function LineBar({ msg }:{ msg?: string }) {
+export default function LineBar({ msg }: { msg?: string }) {
     return (
         <>
             <div className="text-primary">{msg}</div>
