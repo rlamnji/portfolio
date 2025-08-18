@@ -8,8 +8,8 @@ import LineBar from "../../common/components/lineBar";
 function LinkPage() {
 
     return (
-        <div>
-            <div className="p-20">
+        <div className="h-screen">
+            <div className="pl-20 pr-20 pt-15 pb-10">
                 {/* 제목 (공통 스타일) */}
                 <div className="flex flex-row justify-between items-center">
                     <p className="category-title">

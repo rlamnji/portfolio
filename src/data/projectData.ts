@@ -15,9 +15,9 @@ export const projectData: ProjectData[] = [
     {
         id: 1,
         title: "rlamnji portfolio",
-        description: "테스트 설명입니다.",
+        description: "React + TypeScript + tailwindcss를 사용한 나의 포트폴리오 사이트 제작",
         mainImg: "",
-        skills: ["React", "T", "Test", "Test"],
+        skills: ["React", "TypeScript", "tailwindcss", "figma"],
         link: [
             "https://github.com/rlamnji/portfolio",
             "https://www.figma.com/design/hJJnOV1Zs6CLpaCs0A1L7H/portfolio?node-id=56-76&t=DCoLAvdn7ytRKFKM-0",
@@ -26,11 +26,11 @@ export const projectData: ProjectData[] = [
     },
     {
         id: 2,
-        title: "테스트 프로젝트2",
+        title: "젤핏(JellFit)",
         description:
-            "테스트 설명입니다.2 테스트 설명입니다.테스트 설명입니다.테스트 설명입니다.2 테스트 설명입니다.2 테스트 설명입니다.2",
+            "피트니스 트래킹 애플리케이션 (명지대학교 2025 캡스톤디자인1)",
         mainImg: "../assets/notion.svg",
-        skills: ["React", "React", "Test", "React", "React", "Test"],
+        skills: ["React", "tailwindcss", "FastAPI", "MediaPipe"],
         link: [
             "https://github.com/rlamnji/portfolio",
             "https://www.figma.com/design/hJJnOV1Zs6CLpaCs0A1L7H/portfolio?node-id=56-76&t=DCoLAvdn7ytRKFKM-0",
