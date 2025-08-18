@@ -1,14 +1,11 @@
 import GridCard from "./components/gridCard";
-//import CarouselCard from "./components/carouselCard";
 import ViewType from "./components/viewType";
-
 import { useState } from "react";
 import { projectData } from "../../data/projectData";
 import GridModal from "./components/gridModal";
 import LineBar from "../../common/components/lineBar";
 import CarouselCard from "./components/carouselCard";
-
-//import FadeContent from "../../motion/FadeContent";
+import DropDown from "../../common/components/dropDown";
 
 function ProjectPage() {
     const [data] = useState(projectData);
@@ -18,10 +15,15 @@ function ProjectPage() {
 
     return (
         <>
+            {/* 상단바 */}
+            <div className="fixed top-4 right-8 z-50">
+                <DropDown />
+            </div>
+
             <div
-                className={`${modal ? "blur-sm" : ""} h-screen overflow-y-auto`}
+                className={`${modal ? "blur-sm" : ""} h-screen overflow-y-scroll`}
             >
-                <div className="pl-20 pr-20 pt-15">
+                <div className="pl-20 pr-20 pt-15 ">
                     {/* 제목 (공통 스타일) */}
                     <div className="flex flex-row justify-between items-center">
                         <p className="category-title">

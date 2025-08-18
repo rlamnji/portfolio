@@ -7,39 +7,44 @@ import { useState, type SetStateAction } from "react";
 import { projectData, type ProjectData } from "../../../data/projectData";
 import { TechLogos } from "../../../data/techLogos";
 
-//import { Link, Element } from "react-scroll";
 import Slider, { type Settings } from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Element } from "react-scroll";
 
 // 캐러셀 카드 컴포넌트(상세 내용)
 // id 값으로 해당 프로젝트의 상세 내용을 보여주는 컴포넌트
 const CarouselContent = ({ data }: { data: ProjectData }) => {
     return (
         <div className="w-screen h-screen p-20">
-        {/* 배너 영역 */}
-        <div className="w-full overflow-hidden rounded-xl border border-gray-200 mb-5
-                        aspect-[21/6] max-md:aspect-[16/9]">
-            <img
-            src={data.mainImg}
-            alt={data.title ?? "project banner"}
-            className="w-full h-full object-cover object-[center_30%] block"
-            loading="lazy"
-            />
-        </div>
+            {/* 배너 영역 */}
+            <div
+                className="w-full overflow-hidden rounded-xl border border-gray-200 mb-5
+                        aspect-[21/6] max-md:aspect-[16/9]"
+            >
+                <img
+                    src={data.mainImg}
+                    alt={data.title ?? "project banner"}
+                    className="w-full h-full object-cover object-[center_30%] block"
+                    loading="lazy"
+                />
+            </div>
 
-        <div className="flex flex-row items-center gap-5 mt-10 mb-4 max-md:flex-col max-md:items-start">
-            <div className="text-[#8A6E6F] text-[48px] font-bold">{data.title}</div>
-            <div className="text-[#8C8C8C] text-[20px]">{data.description}</div>
-        </div>
+            <div className="flex flex-row items-center gap-5 mt-10 mb-4 max-md:flex-col max-md:items-start">
+                <div className="text-[#8A6E6F] text-[48px] font-bold">
+                    {data.title}
+                </div>
+                <div className="text-[#8C8C8C] text-[20px]">
+                    {data.description}
+                </div>
+            </div>
 
-        <div className="border border-gray-200 h-[500px] rounded-xl p-10 text-[#8C8C8C]">
-            {data.contents}
-        </div>
+            <div className="border border-gray-200 h-[500px] rounded-xl p-10 text-[#8C8C8C]">
+                {data.contents}
+            </div>
         </div>
     );
 };
-
 
 // 캐러셀 카드 컴포넌트
 export default function CarouselCard() {
@@ -53,16 +58,27 @@ export default function CarouselCard() {
         slidesToShow: 3,
         speed: 500,
         // 기본(대형 화면)
-        afterChange: (index: SetStateAction<number>) => setCurrentSlideIndex(index),
+        afterChange: (index: SetStateAction<number>) =>
+            setCurrentSlideIndex(index),
         responsive: [
             // 대형
             { breakpoint: 1920, settings: { centerPadding: "200px" } },
             // 노트북
             { breakpoint: 1536, settings: { centerPadding: "90px" } },
             // 태블릿 세로
-            { breakpoint: 820,  settings: { slidesToShow: 1, centerPadding: "72px" } },
+            {
+                breakpoint: 820,
+                settings: { slidesToShow: 1, centerPadding: "72px" },
+            },
             // 모바일 centerMode 끔
-            { breakpoint: 768,  settings: { slidesToShow: 1, centerMode: false, centerPadding: "0px" } },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                    centerMode: false,
+                    centerPadding: "0px",
+                },
+            },
         ],
     };
 
@@ -81,7 +97,11 @@ export default function CarouselCard() {
                                     className={`flex items-center h-[700px] mb-5 p-10 ${i === currentSlideIndex ? "z-10 cursor-pointer" : "opacity-40"}`} // 현재 카드에만 z-index와 투명도 적용
                                 >
                                     <div
-                                        className={`border border-gray-200 w-[300px] h-[450px] bg-white shadow-xl rounded-2xl flex flex-col p-6 ${i === currentSlideIndex ? "scale-120 w-[430px] h-[500px] hover:scale-125 transition-transform duration-300 ease-in-out" : ""}`}
+                                        className={`border border-gray-200 w-[300px] h-[450px] bg-white shadow-xl rounded-2xl flex flex-col p-6 
+                                            ${i === currentSlideIndex ? "scale-120 w-[430px] h-[500px] hover:scale-125 transition-transform duration-300 ease-in-out" : ""}`}
+                                        onClick={() => {
+                                            console.log(i);
+                                        }}
                                     >
                                         <div className="flex justify-center">
                                             {i === currentSlideIndex ? (
@@ -94,10 +114,14 @@ export default function CarouselCard() {
                                                 <div className="w-60 h-60 border border-white rounded-xl mb-5"></div>
                                             )}
                                         </div>
-                                        <h2 className={ `text-[20px] text-[#8A6E6F] font-bold mb-2 ${i===currentSlideIndex ? "`text-[24px]" : " "}`}>
+                                        <h2
+                                            className={`text-[20px] text-[#8A6E6F] font-bold mb-2 ${i === currentSlideIndex ? "text-[24px]" : " "}`}
+                                        >
                                             {item.title}
                                         </h2>
-                                        <span className={`h-30 overflow-auto text-[14px] text-[#8C8C8C] ${i===currentSlideIndex ? "text-[16px]" : " "}`}>
+                                        <span
+                                            className={`h-30 overflow-auto text-[14px] text-[#8C8C8C] ${i === currentSlideIndex ? "text-[16px]" : " "}`}
+                                        >
                                             {item.description}
                                         </span>
 
@@ -123,9 +147,12 @@ export default function CarouselCard() {
                 </Slider>
             </div>
 
-            <div className="flex justify-center items-center mt-30">
-                {<CarouselContent data={data[currentSlideIndex]} />}
-            </div>
+            <Element
+                name="cc"
+                className="flex justify-center items-center mt-[200px]"
+            >
+                <CarouselContent data={data[currentSlideIndex]} />
+            </Element>
         </>
     );
 }

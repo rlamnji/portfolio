@@ -16,13 +16,13 @@ export default function GridModal({
 
     return (
         <div className="w-180 h-200 border border-gray-200 bg-white p-6 rounded-xl shadow-xl shadow-[#B4A9A9]">
-            <div className="w-10 ml-160">
-                <button
-                    className="cursor-pointer bg-primary rounded-full w-6 h-6 text-white"
+            <div className="w-10 ml-160 ">
+                <div
+                    className="cursor-pointer bg-primary rounded-full w-6 h-6 text-white flex justify-center items-center"
                     onClick={() => setModal(false)}
                 >
                     X
-                </button>
+                </div>
             </div>
 
             <div className="flex flex-row justify-between pl-5 pr-5 pt-3 items-center">
@@ -76,7 +76,9 @@ export default function GridModal({
                     </div>
                 </div>
 
-                <div><img className="w-60 h-50 rounded-xl" src={mainImg}/></div>
+                <div>
+                    <img className="w-60 h-50 rounded-xl" src={mainImg} />
+                </div>
             </div>
 
             {/* 여기에 프로젝트 상세 내용 추가 */}

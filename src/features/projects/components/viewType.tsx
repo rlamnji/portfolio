@@ -13,18 +13,18 @@ export default function ViewType({ setViewType, viewType }: ViewTypeProps) {
 
     return (
         <div className="flex flex-row items-center gap-4 mt-5">
-            <button
-                className={`cursor-pointer text-[13px] p-2 rounded-4xl w-20 h-8 ${viewType === "grid" ? "bg-[#C7B6B7] text-white" : "bg-white text-[#C7B6B7] border color-[#C7B6B7]"}`}
+            <div
+                className={`flex justify-center items-center cursor-pointer text-[13px] p-2 rounded-4xl w-20 h-8 ${viewType === "grid" ? "bg-[#C7B6B7] text-white" : "bg-white text-[#C7B6B7] border color-[#C7B6B7]"}`}
                 onClick={() => onClick("grid")}
             >
                 Grid
-            </button>
-            <button
-                className={`cursor-pointer border color-[#C7B6B7] text-[13px] p-2 rounded-4xl w-20 h-8 ${viewType === "carousel" ? "bg-[#C7B6B7] text-white" : "bg-white text-[#C7B6B7] border color-[#C7B6B7]"}`}
+            </div>
+            <div
+                className={`flex justify-center items-center cursor-pointer border color-[#C7B6B7] text-[13px] p-2 rounded-4xl w-20 h-8 ${viewType === "carousel" ? "bg-[#C7B6B7] text-white" : "bg-white text-[#C7B6B7] border color-[#C7B6B7]"}`}
                 onClick={() => onClick("carousel")}
             >
                 Carousel
-            </button>
+            </div>
         </div>
     );
 }
