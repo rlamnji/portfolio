@@ -1,9 +1,11 @@
 import GridCard from "./components/gridCard";
 import ViewType from "./components/viewType";
 
-import { useState } from "react";
+import { useState} from "react";
+//import { useNavigate } from "react-router-dom";
 import { projectData } from "../../data/projectData";
 import GridModal from "./components/gridModal";
+//import { useContainerScrollNavigateBi } from "../../common/hook/useScrollNavigate";
 
 function ProjectPage() {
     const [data] = useState(projectData);
@@ -13,7 +15,9 @@ function ProjectPage() {
 
     return (
         <>
-            <div className={`${modal === true ? "blur-sm" : ""}`}>
+      <div
+        className={`${modal ? "blur-sm" : ""} h-100vh overflow-y-auto`}
+      >
                 <div className="p-20 ">
                     {/* 제목 (공통 스타일) */}
                     <div className="flex flex-row justify-between items-center">
@@ -25,6 +29,7 @@ function ProjectPage() {
                             <div className="text-primary">
                                 * What Im Skilled In
                             </div>
+
                         </div>
                     </div>
 

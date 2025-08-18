@@ -14,7 +14,7 @@ export interface ProjectData {
 export const projectData: ProjectData[] = [
     {
         id: 1,
-        title: "테스트 프로젝트1",
+        title: "rlamnji portfolio",
         description: "테스트 설명입니다.",
         mainImg: "",
         skills: ["React", "T", "Test", "Test"],
