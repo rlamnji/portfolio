@@ -3,7 +3,7 @@ import type { ProjectData } from "../../../data/projectData";
 
 import github from "../../../assets/github.svg";
 import notion from "../../../assets/notion.svg";
-import testLogo from "../../../assets/react.svg";
+import { TechLogos } from "../../../data/techLogos";
 
 export default function GridModal({
     data,
@@ -33,30 +33,42 @@ export default function GridModal({
                         </div>
                         <div className="flex flex-row w-15 gap-x-2 items-center">
                             <div>
-                                <img src={github} />
+                                <a
+                                    href={data.link[0]}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <img src={github} />
+                                </a>
                             </div>
                             <div>
-                                <img src={notion} />
+                                <a
+                                    href={data.link[1]}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <img src={notion} />
+                                </a>
                             </div>
                         </div>
                     </div>
 
-                    <span className="text-[14px] text-project-content mt-4 mb-3 w-80 h-10 overflow-auto">
+                    <span className="text-[14px] text-project-content mt-4 mb-3 w-80 h-12 overflow-auto">
                         {description}
                     </span>
 
-                    <div className="grid gap-2 grid-cols-4 mt-4 w-80">
+                    <div className="grid gap-2 grid-cols-3 mt-4 w-80">
                         {skills.map((skill, index) => (
                             <div
                                 key={index}
-                                className="flex items-center justify-center w-18 h-7 bg-[#5F5F5F] rounded-full text-white"
+                                className="flex items-center justify-center w-full h-7 bg-[#5F5F5F] rounded-full text-white"
                             >
                                 <img
-                                    src={testLogo}
+                                    src={TechLogos[skill]}
                                     alt="Skill Logo"
                                     className="w-4 h-4 mr-1"
                                 />
-                                <span className="text-white text-[14px]">
+                                <span className="text-white text-[12px]">
                                     {skill}
                                 </span>
                             </div>

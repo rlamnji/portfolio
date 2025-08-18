@@ -1,7 +1,7 @@
 // 단일 프로젝트 카드 컴포넌트
 import testImg from "../../../assets/notion.svg";
-import testLogo from "../../../assets/react.svg";
 import type { ProjectData } from "../../../data/projectData";
+import { TechLogos } from "../../../data/techLogos";
 
 import { motion } from "motion/react";
 //import GlareHover from '../../../motion/GlareHover';
@@ -50,25 +50,25 @@ export default function ProjectCard({
             {/* 2개 이상이면 상위 2개만 노출 */}
             {/* 나머지는 갯수로 노출 */}
             <div className="flex flex-row gap-2 items-center">
-                {skills.slice(0, 3).map((skill, index) => (
+                {skills.slice(0, 2).map((skill, index) => (
                     <div
                         key={index}
-                        className="flex items-center justify-center p-2 h-7 bg-[#5F5F5F] rounded-full text-white"
+                        className="flex items-center justify-center p-2 h-7 w-50% bg-[#5F5F5F] rounded-full text-white"
                     >
                         <img
-                            src={testLogo}
+                            src={TechLogos[skill]}
                             alt="Skill Logo"
                             className="w-4 h-4 mr-1"
                         />
-                        <span className="text-white text-[14px] font-light">
+                        <span className="text-white text-[12px] max-md:text-[12px] font-light">
                             {skill}
                         </span>
                     </div>
                 ))}
 
-                {skills.length > 3 && (
+                {skills.length > 2 && (
                     <div className="flex items-center justify-center w-7 h-7 bg-[#5F5F5F] rounded-full text-white text-[14px] font-light">
-                        +{skills.length - 3}
+                        +{skills.length - 2}
                     </div>
                 )}
             </div>

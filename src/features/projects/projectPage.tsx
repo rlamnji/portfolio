@@ -1,11 +1,12 @@
 import GridCard from "./components/gridCard";
+//import CarouselCard from "./components/carouselCard";
 import ViewType from "./components/viewType";
 
-import { useState} from "react";
-//import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 import { projectData } from "../../data/projectData";
 import GridModal from "./components/gridModal";
-//import { useContainerScrollNavigateBi } from "../../common/hook/useScrollNavigate";
+import LineBar from "../../common/components/lineBar";
+import CarouselCard from "./components/carouselCard";
 
 //import FadeContent from "../../motion/FadeContent";
 
@@ -17,21 +18,18 @@ function ProjectPage() {
 
     return (
         <>
-      <div
-        className={`${modal ? "blur-sm" : ""} h-100vh overflow-y-auto`}
-      >
-                <div className="p-20 ">
+            <div
+                className={`${modal ? "blur-sm" : ""} h-screen overflow-y-auto`}
+            >
+                <div className="pl-20 pr-20 pt-15 pb-10">
                     {/* 제목 (공통 스타일) */}
                     <div className="flex flex-row justify-between items-center">
                         <p className="category-title">
                             <span className="text-[64px]">P</span>roject
                         </p>
 
-                        <div className="flex flex-row">
-                            <div className="text-primary">
-                                * What Im Skilled In
-                            </div>
-
+                        <div className="flex flex-row items-center w-96 gap-2">
+                            <LineBar msg="* Linked In" />
                         </div>
                     </div>
 
@@ -39,13 +37,7 @@ function ProjectPage() {
                     <ViewType setViewType={setViewType} viewType={viewType} />
                 </div>
 
-                {/*<FadeContent
-                    blur={true}
-                    duration={1000}
-                    easing="ease-out"
-                    initialOpacity={0}
-                >*}
-                    {/* 프로젝트 카드 */}
+                {/* 프로젝트 카드 */}
                 <div className="justify-center items-center flex flex-col">
                     {viewType === "grid" && (
                         <div className="grid grid-cols-3 max-md:grid-cols-1 gap-x-30 gap-y-10">
@@ -61,15 +53,11 @@ function ProjectPage() {
                     )}
 
                     {viewType === "carousel" && (
-                        <div className="flex flex-cols-3 gap-x-30 gap-y-10">
-                            {/*  {data.map((data) => (
-                            <ProjectCard key={data.id} data={data} />
-                        ))}*/}
-                            carousel
+                        <div className="h-[600px] w-screen">
+                            <CarouselCard />
                         </div>
                     )}
                 </div>
-                {/*</FadeContent>*/}
             </div>
 
             {/* 모달창 */}
