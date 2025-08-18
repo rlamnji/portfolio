@@ -4,6 +4,8 @@ import testLogo from "../../../assets/react.svg";
 import type { ProjectData } from "../../../data/projectData";
 
 import { motion } from "motion/react";
+//import GlareHover from '../../../motion/GlareHover';
+//import SlideContent from '../../../motion/SlideContent';
 
 export default function ProjectCard({
     data,

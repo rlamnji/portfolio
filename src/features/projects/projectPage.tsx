@@ -7,6 +7,8 @@ import { projectData } from "../../data/projectData";
 import GridModal from "./components/gridModal";
 //import { useContainerScrollNavigateBi } from "../../common/hook/useScrollNavigate";
 
+//import FadeContent from "../../motion/FadeContent";
+
 function ProjectPage() {
     const [data] = useState(projectData);
     const [viewType, setViewType] = useState("grid");
@@ -37,7 +39,13 @@ function ProjectPage() {
                     <ViewType setViewType={setViewType} viewType={viewType} />
                 </div>
 
-                {/* 프로젝트 카드 */}
+                {/*<FadeContent
+                    blur={true}
+                    duration={1000}
+                    easing="ease-out"
+                    initialOpacity={0}
+                >*}
+                    {/* 프로젝트 카드 */}
                 <div className="justify-center items-center flex flex-col">
                     {viewType === "grid" && (
                         <div className="grid grid-cols-3 max-md:grid-cols-1 gap-x-30 gap-y-10">
@@ -61,6 +69,7 @@ function ProjectPage() {
                         </div>
                     )}
                 </div>
+                {/*</FadeContent>*/}
             </div>
 
             {/* 모달창 */}
