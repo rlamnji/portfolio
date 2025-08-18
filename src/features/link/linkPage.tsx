@@ -3,7 +3,7 @@ import LinkCard from "./components/linkCard";
 import LineBar from "../../common/components/lineBar";
 import DropDown from "../../common/components/dropDown";
 
-function LinkPage() {
+export default function LinkPage() {
     return (
         <div className="h-screen overflow-y-scroll">
             {/* 상단바 */}
@@ -37,5 +37,3 @@ function LinkPage() {
         </div>
     );
 }
-
-export default LinkPage;

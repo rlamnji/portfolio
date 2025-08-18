@@ -49,7 +49,7 @@ const CarouselContent = ({ data }: { data: ProjectData }) => {
 // 캐러셀 카드 컴포넌트
 export default function CarouselCard() {
     const [data] = useState(projectData);
-    const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
+    const [currentSlideIndex, setCurrentSlideIndex] = useState<number>(0);
 
     const settings: Settings = {
         className: "center",

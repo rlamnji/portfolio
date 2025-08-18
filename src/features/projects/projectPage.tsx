@@ -7,11 +7,14 @@ import LineBar from "../../common/components/lineBar";
 import CarouselCard from "./components/carouselCard";
 import DropDown from "../../common/components/dropDown";
 
+export type ViewTypeKey = "grid" | "carousel";
+
 function ProjectPage() {
     const [data] = useState(projectData);
-    const [viewType, setViewType] = useState("grid");
+    const [viewType, setViewType] = useState<ViewTypeKey>("grid");
     const [id, setID] = useState<number | null>(null);
-    const [modal, setModal] = useState(false);
+    const [modal, setModal] = useState<boolean>(false);
+  
 
     return (
         <>

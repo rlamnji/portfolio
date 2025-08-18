@@ -1,12 +1,14 @@
 // 프로젝트 보기형식 선택 컴포넌트
 
+import type { ViewTypeKey } from "../projectPage";
+
 type ViewTypeProps = {
-    setViewType: (type: string) => void;
-    viewType: string;
+  viewType: ViewTypeKey;
+  setViewType: React.Dispatch<React.SetStateAction<ViewTypeKey>>;
 };
 
 export default function ViewType({ setViewType, viewType }: ViewTypeProps) {
-    const onClick = (type: string) => {
+    const onClick = (type: ViewTypeKey) => {
         setViewType(type);
         console.log(type);
     };
