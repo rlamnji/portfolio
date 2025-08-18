@@ -33,7 +33,7 @@ const CarouselContent = ({ data }: { data: ProjectData }) => {
             <div className="text-[#8C8C8C] text-[20px]">{data.description}</div>
         </div>
 
-        <div className="border border-gray-200 h-[500px] rounded-xl p-10">
+        <div className="border border-gray-200 h-[500px] rounded-xl p-10 text-[#8C8C8C]">
             {data.contents}
         </div>
         </div>
@@ -55,13 +55,13 @@ export default function CarouselCard() {
         // 기본(대형 화면)
         afterChange: (index: SetStateAction<number>) => setCurrentSlideIndex(index),
         responsive: [
-            // QHD/대형
+            // 대형
             { breakpoint: 1920, settings: { centerPadding: "200px" } },
-            // 15~16" 노트북
+            // 노트북
             { breakpoint: 1536, settings: { centerPadding: "90px" } },
             // 태블릿 세로
             { breakpoint: 820,  settings: { slidesToShow: 1, centerPadding: "72px" } },
-            // 모바일: centerMode 끔(겹침 방지)
+            // 모바일 centerMode 끔
             { breakpoint: 768,  settings: { slidesToShow: 1, centerMode: false, centerPadding: "0px" } },
         ],
     };
@@ -78,10 +78,10 @@ export default function CarouselCard() {
                         <div key={i}>
                             <div className="flex flex-row justify-center items-center mt-10">
                                 <div
-                                    className={`flex items-center h-[600px] mb-10 p-10 ${i === currentSlideIndex ? "z-10 cursor-pointer" : "opacity-40"}`} // 현재 카드에만 z-index와 투명도 적용
+                                    className={`flex items-center h-[700px] mb-5 p-10 ${i === currentSlideIndex ? "z-10 cursor-pointer" : "opacity-40"}`} // 현재 카드에만 z-index와 투명도 적용
                                 >
                                     <div
-                                        className={`border border-gray-200 w-[300px] h-[450px] bg-white shadow-xl rounded-2xl flex flex-col p-6 ${i === currentSlideIndex ? "scale-120 w-[430px] h-[500px]" : ""}`}
+                                        className={`border border-gray-200 w-[300px] h-[450px] bg-white shadow-xl rounded-2xl flex flex-col p-6 ${i === currentSlideIndex ? "scale-120 w-[430px] h-[500px] hover:scale-125 transition-transform duration-300 ease-in-out" : ""}`}
                                     >
                                         <div className="flex justify-center">
                                             {i === currentSlideIndex ? (
